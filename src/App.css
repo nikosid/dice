@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
   background-color: #282c34;
@@ -6,18 +9,38 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 2vmin);
   color: white;
 }
 
 .dice-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 150px 150px;
-  grid-gap: 10px;
+  grid-gap: 10px; */
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
 }
 
 .dice {
-  margin: 20px;
+  /* margin: 20px; */
+  display: flex;
+  width: 150px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.dice svg {
+  cursor: pointer;
+}
+
+.dice-number {
+  margin-left: 8px;
+  font-size: 24px;
+  cursor: default;
+}
+
+.dice-number::selection {
+  background: transparent;
 }
 
 @keyframes App-logo-spin {
