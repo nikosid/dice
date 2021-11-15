@@ -37,6 +37,8 @@ const getIcon = (diceNumber) => {
       return faDiceFive;
     case "6":
       return faDiceSix;
+    default:
+      return faDiceOne;
   }
 };
 
