@@ -23,18 +23,14 @@
 }
 
 .dice {
-  /* margin: 20px; */
-  display: flex;
   width: 150px;
-  align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .dice svg {
   cursor: pointer;
 }
 
 .dice-number {
-  margin-left: 8px;
   font-size: 24px;
   cursor: default;
 }

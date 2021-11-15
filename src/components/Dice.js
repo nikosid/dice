@@ -18,7 +18,7 @@ const Dice = (props) => {
   return (
     <div className="dice">
       <FontAwesomeIcon icon={icon} size="4x" onClick={clickHandler} />
-      <span className="dice-number">{count}</span>
+      <div className="dice-number">{count}</div>
     </div>
   );
 };
