@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import Onedice from "./routes/onedice";
-import Twodice from "./routes/twodice";
+import Onedice from "./routes/one-dice";
+import Twodice from "./routes/two-dice";
 
 ReactDOM.render(
   <React.StrictMode>
