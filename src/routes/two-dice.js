@@ -1,8 +1,7 @@
 import "../App.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSync, faHome } from "@fortawesome/free-solid-svg-icons";
-import Dice from "../components/Dice";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 function Twodice() {
   return (
