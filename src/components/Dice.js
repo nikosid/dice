@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiceOne,
@@ -10,15 +9,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Dice = (props) => {
-  const [count, setCount] = useState(0);
+  let arr = Object.values(props.values);
+  let max = Math.max(...arr);
   const icon = getIcon(props.number);
   const clickHandler = () => {
-    setCount((count) => count + 1);
+    props.onClick(props.number);
   };
+  let divClasses = "dice";
+  divClasses += props.values[props.number] === max && max > 0 ? " active" : "";
   return (
-    <div className="dice">
+    <div className={divClasses}>
       <FontAwesomeIcon icon={icon} size="4x" onClick={clickHandler} />
-      <div className="dice-number">{count}</div>
+      <div className="dice-number">{props.values[props.number]}</div>
     </div>
   );
 };
