@@ -13,6 +13,37 @@
   color: white;
 }
 
+.icon-home {
+  color: #727e94;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  
+}
+
+nav a {
+  color: #727e94;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+nav .nav-wrapper {
+  display: flex;
+}
+
+nav .nav-wrapper a {
+  font-size: 40px;
+}
+
+nav .nav-wrapper .nav-item {
+  margin: 0 30px;
+}
+
 .dice-container {
   display: flex;
   width: 300px;
@@ -21,14 +52,14 @@
 
 .dice {
   width: 150px;
-  margin-bottom: 50px;
+  margin: 20px 0;
 }
 .dice svg {
   cursor: pointer;
 }
 
 .active svg {
-  color: red;
+  color: rgb(155, 46, 131);
 }
 
 .dice-number {
@@ -38,6 +69,10 @@
 
 .dice-number::selection, .dice svg::selection {
   background: transparent;
+}
+
+.dice-reset {
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

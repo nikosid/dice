@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Dice = (props) => {
-  let arr = Object.values(props.values);
+  const arr = Object.values(props.values);
   let max = Math.max(...arr);
   const icon = getIcon(props.number);
   const clickHandler = () => {
