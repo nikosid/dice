@@ -41,6 +41,9 @@ const Onedice = () => {
         <Link to="/two-dice">Two Dice</Link>
       </nav>
       <span className="title">One Dice Counter</span>
+      <div className="dice-reset">
+        <FontAwesomeIcon icon={faSync} size="lg" onClick={resetDice} />
+      </div>
       <div className="dice-container">
         <Dice number="1" values={diceValues} onClick={diceClickHandler} />
         <Dice number="2" values={diceValues} onClick={diceClickHandler} />
@@ -48,9 +51,6 @@ const Onedice = () => {
         <Dice number="4" values={diceValues} onClick={diceClickHandler} />
         <Dice number="5" values={diceValues} onClick={diceClickHandler} />
         <Dice number="6" values={diceValues} onClick={diceClickHandler} />
-      </div>
-      <div className="dice-reset">
-        <FontAwesomeIcon icon={faSync} size="2x" onClick={resetDice} />
       </div>
     </div>
   );

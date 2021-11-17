@@ -21,7 +21,6 @@
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 10px;
-  
 }
 
 nav a {
@@ -46,8 +45,10 @@ nav .nav-wrapper .nav-item {
 
 .dice-container {
   display: flex;
-  width: 300px;
+  width: 302px;
   flex-wrap: wrap;
+  border: #727e94 solid 1px;
+  border-radius: 2%;
 }
 
 .dice {
@@ -67,12 +68,65 @@ nav .nav-wrapper .nav-item {
   cursor: default;
 }
 
-.dice-number::selection, .dice svg::selection {
+.dice-number::selection,
+.dice svg::selection {
   background: transparent;
 }
 
 .dice-reset {
   cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.dice-two-container {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.dice-two-container-inner-left {
+  display: flex;
+  width: 180px;
+  flex-wrap: wrap;
+  margin: 0 10px;
+  border: #727e94 solid 1px;
+  border-radius: 2%;
+  justify-content: center;
+}
+
+.dice-two-container-inner-right {
+  display: flex;
+  width: 120px;
+  flex-wrap: wrap;
+  margin: 0 10px;
+  border: #727e94 solid 1px;
+  border-radius: 2%;
+  justify-content: center;
+}
+
+.dice-two-list {
+  list-style: none;
+}
+
+.dice-two-list-item {
+  display: inline;
+}
+
+.dice-two {
+  width: 80px;
+  margin: 10px 0;
+}
+
+.dice-two-list {
+  width: 80px;
+  margin: 10px 0;
+}
+
+.dice-two-list .plus-sign {
+  font-size: 14px;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
