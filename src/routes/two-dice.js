@@ -92,7 +92,7 @@ const Twodice = () => {
                 }`}
                 key={`dice-${value}`}
               >
-                <DiceIcon number={value} size="2x" onClick={diceClickHandler} />
+                <DiceIcon number={value} size="3x" onClick={diceClickHandler} />
               </div>
             );
           })}
@@ -120,9 +120,9 @@ const Twodice = () => {
                   className="dice-two-list-item"
                   key={`result-${line["firstDice"]}${line["secondDice"]}`}
                 >
-                  <DiceIcon number={line["firstDice"]} size="xs" />
+                  <DiceIcon number={line["firstDice"]} size="sm" />
                   <span>+</span>
-                  <DiceIcon number={line["secondDice"]} size="xs" />
+                  <DiceIcon number={line["secondDice"]} size="sm" />
                   <span>={line["value"]}</span>
                 </div>
               );
