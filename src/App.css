@@ -80,8 +80,10 @@ nav .nav-wrapper .nav-item {
 .dice-two-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
+  border: #727e94 solid 1px;
+  border-radius: 2%;
 }
 
 .dice-two-container .active svg {
@@ -93,8 +95,6 @@ nav .nav-wrapper .nav-item {
   flex-wrap: wrap;
   width: 180px;
   margin: 0 10px;
-  border: #727e94 solid 1px;
-  border-radius: 2%;
   justify-content: center;
   align-items: flex-start;
 }
@@ -103,10 +103,9 @@ nav .nav-wrapper .nav-item {
   display: flex;
   flex-wrap: wrap;
   width: 120px;
+  padding-top:10px;
   justify-content: center;
   align-items: flex-start;
-  border: #727e94 solid 1px;
-  border-radius: 2%;
 }
 
 .dice-two-list-item {
