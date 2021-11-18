@@ -18,6 +18,7 @@ const Onedice = () => {
   const [diceValues, setDiceValues] = useState(DEFAULT_DICE_VALUES);
 
   const diceClickHandler = (diceNumber) => {
+    //TODO: Implement the function to save the dice values
     setDiceValues({
       ...diceValues,
       [diceNumber]: diceValues[diceNumber] + 1,

@@ -51,15 +51,15 @@ nav .nav-wrapper .nav-item {
   border-radius: 2%;
 }
 
-.dice {
+.dice-container .dice {
   width: 150px;
   margin: 20px 0;
 }
-.dice svg {
+.dice-container .dice svg {
   cursor: pointer;
 }
 
-.active svg {
+.dice-container .active svg {
   color: rgb(155, 46, 131);
 }
 
@@ -68,8 +68,7 @@ nav .nav-wrapper .nav-item {
   cursor: default;
 }
 
-.dice-number::selection,
-.dice svg::selection {
+.dice-number::selection {
   background: transparent;
 }
 
@@ -80,38 +79,43 @@ nav .nav-wrapper .nav-item {
 
 .dice-two-container {
   display: flex;
-  width: 600px;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
+}
+
+.dice-two-container .active svg {
+  color: rgb(97, 148, 231);
 }
 
 .dice-two-container-inner-left {
   display: flex;
-  width: 180px;
   flex-wrap: wrap;
+  width: 180px;
   margin: 0 10px;
   border: #727e94 solid 1px;
   border-radius: 2%;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .dice-two-container-inner-right {
   display: flex;
-  width: 120px;
   flex-wrap: wrap;
-  margin: 0 10px;
+  width: 120px;
+  justify-content: center;
+  align-items: flex-start;
   border: #727e94 solid 1px;
   border-radius: 2%;
-  justify-content: center;
-}
-
-.dice-two-list {
-  list-style: none;
 }
 
 .dice-two-list-item {
-  display: inline;
+  width: 120px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 15px;
 }
 
 .dice-two {
@@ -119,14 +123,21 @@ nav .nav-wrapper .nav-item {
   margin: 10px 0;
 }
 
+.dice-two svg {
+  cursor: pointer;
+}
+
 .dice-two-list {
   width: 80px;
   margin: 10px 0;
 }
 
-.dice-two-list .plus-sign {
+.dice-two-list-item span {
   font-size: 14px;
   justify-content: center;
+}
+.dice-two-list-item span::selection {
+  background: transparent;
 }
 
 @keyframes App-logo-spin {
