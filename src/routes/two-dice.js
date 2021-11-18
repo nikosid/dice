@@ -47,7 +47,7 @@ const Twodice = () => {
       });
       setTimeout(() => {
         setChoises([]);
-      }, 250);
+      }, 150);
     }
   };
 
