@@ -1,9 +1,9 @@
-import "../App.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSync, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faSync } from "@fortawesome/free-solid-svg-icons";
+import classes from "../App.module.css";
 import Dice from "../components/Dice";
+import Layout from "../components/Layout";
 
 const DEFAULT_DICE_VALUES = {
   1: 0,
@@ -18,10 +18,11 @@ const Onedice = () => {
   const [diceValues, setDiceValues] = useState(DEFAULT_DICE_VALUES);
 
   const diceClickHandler = (diceNumber) => {
-    //TODO: Implement the function to save the dice values
-    setDiceValues({
-      ...diceValues,
-      [diceNumber]: diceValues[diceNumber] + 1,
+    setDiceValues((diceValues) => {
+      return {
+        ...diceValues,
+        [diceNumber]: diceValues[diceNumber] + 1,
+      };
     });
   };
 
@@ -29,23 +30,12 @@ const Onedice = () => {
     setDiceValues(DEFAULT_DICE_VALUES);
   };
   return (
-    <div className="App">
-      <Link to="/" className="icon-home">
-        <FontAwesomeIcon icon={faHome} />
-      </Link>
-      <nav
-        style={{
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/one-dice">One Dice</Link>{" "}
-        <Link to="/two-dice">Two Dice</Link>
-      </nav>
-      <span className="title">One Dice Counter</span>
-      <div className="dice-reset">
+    <Layout>
+      <span className={classes["title"]}>One Dice Counter</span>
+      <div className={classes["dice-reset"]}>
         <FontAwesomeIcon icon={faSync} size="lg" onClick={resetDice} />
       </div>
-      <div className="dice-container">
+      <div className={classes["dice-container"]}>
         <Dice number="1" values={diceValues} onClick={diceClickHandler} />
         <Dice number="2" values={diceValues} onClick={diceClickHandler} />
         <Dice number="3" values={diceValues} onClick={diceClickHandler} />
@@ -53,7 +43,7 @@ const Onedice = () => {
         <Dice number="5" values={diceValues} onClick={diceClickHandler} />
         <Dice number="6" values={diceValues} onClick={diceClickHandler} />
       </div>
-    </div>
+      </Layout>
   );
 };
 

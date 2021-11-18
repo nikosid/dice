@@ -1,0 +1,20 @@
+.dice {
+  width: 150px;
+  margin: 20px 0;
+}
+.dice svg {
+  cursor: pointer;
+}
+
+.active svg {
+  color: rgb(155, 46, 131);
+}
+
+.dice-number {
+  font-size: 24px;
+  cursor: default;
+}
+
+.dice-number::selection {
+  background: transparent;
+}

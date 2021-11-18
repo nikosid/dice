@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faSync } from "@fortawesome/free-solid-svg-icons";
-import "../App.css";
+import { faSync } from "@fortawesome/free-solid-svg-icons";
+import classes from "../App.module.css";
 import DiceIcon from "../components/DiceIcon";
+import Layout from "../components/Layout";
 
 const DEFAULT_DICE_VALUES = {
   11: 0,
@@ -66,29 +66,18 @@ const Twodice = () => {
   }
 
   return (
-    <div className="App">
-      <Link to="/" className="icon-home">
-        <FontAwesomeIcon icon={faHome} />
-      </Link>
-      <nav
-        style={{
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/one-dice">One Dice</Link>{" "}
-        <Link to="/two-dice">Two Dice</Link>
-      </nav>
-      <span className="title">Two Dice Counter</span>
-      <div className="dice-reset">
+    <Layout>
+      <span className={classes["title"]}>Two Dice Counter</span>
+      <div className={classes["dice-reset"]}>
         <FontAwesomeIcon icon={faSync} size="lg" onClick={resetDice} />
       </div>
-      <div className="dice-two-container">
-        <div className="dice-two-container-inner-left">
+      <div className={classes["dice-two-container"]}>
+        <div className={classes["dice-two-container-inner-left"]}>
           {[1, 2, 3, 4, 5, 6].map((value) => {
             return (
               <div
-                className={`dice-two ${
-                  choises.includes(value) ? "active" : ""
+                className={`${classes["dice-two"]} ${
+                  choises.includes(value) ? classes.active : ""
                 }`}
                 key={`dice-${value}`}
               >
@@ -97,7 +86,7 @@ const Twodice = () => {
             );
           })}
         </div>
-        <div className="dice-two-container-inner-right">
+        <div className={classes["dice-two-container-inner-right"]}>
           {results
             .sort((a, b) => {
               if (a.value < b.value) {
@@ -117,7 +106,7 @@ const Twodice = () => {
             .map((line) => {
               return (
                 <div
-                  className="dice-two-list-item"
+                  className={classes["dice-two-list-item"]}
                   key={`result-${line["firstDice"]}${line["secondDice"]}`}
                 >
                   <DiceIcon number={line["firstDice"]} size="sm" />
@@ -129,7 +118,7 @@ const Twodice = () => {
             })}
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

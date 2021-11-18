@@ -1,4 +1,5 @@
 import DiceIcon from "./DiceIcon";
+import classes from "./Dice.module.css"
 
 const Dice = (props) => {
   const arr = Object.values(props.values);
@@ -6,12 +7,11 @@ const Dice = (props) => {
   const clickHandler = () => {
     props.onClick(props.number);
   };
-  let divClasses = "dice";
-  divClasses += props.values[props.number] === max && max > 0 ? " active" : "";
+  const divClasses = props.values[props.number] === max && max > 0 ? `${classes.dice} ${classes.active}` : classes.dice;
   return (
     <div className={divClasses}>
       <DiceIcon number={props.number} onClick={clickHandler} />
-      <div className="dice-number">{props.values[props.number]}</div>
+      <div className={classes["dice-number"]}>{props.values[props.number]}</div>
     </div>
   );
 };
