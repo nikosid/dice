@@ -1,9 +1,8 @@
 # Dice Counter App
 
-Application for counting the number of dice dropped
+Application for counting the number of dice dropped.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+The application hosted on [https://dice.nikosid.com](dice.nikosid.com) served by Netlify
 ## Available Scripts
 
 In the project directory, you can run:
