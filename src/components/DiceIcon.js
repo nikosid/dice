@@ -1,3 +1,4 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faDiceOne,
@@ -39,4 +40,4 @@ const DiceIcon = (props) => {
   return <FontAwesomeIcon icon={icon} size={size} onClick={clickHandler} />;
 };
 
-export default DiceIcon;
+export default React.memo(DiceIcon);
