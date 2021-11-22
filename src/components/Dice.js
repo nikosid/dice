@@ -3,12 +3,12 @@ import DiceIcon from "./DiceIcon";
 import classes from "./Dice.module.css";
 
 const Dice = (props) => {
-  const { number, values, onClick } = props;
+  const { number, values } = props;
   const arr = Object.values(values);
   let max = Math.max(...arr);
   const clickHandler = useCallback(() => {
-    onClick(number);
-  }, [onClick, number]);
+    props.onClick(number);
+  }, [props.onClick, number]);
   const divClasses =
     values[number] === max && max > 0
       ? `${classes.dice} ${classes.active}`
