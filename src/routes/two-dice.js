@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSync } from "@fortawesome/free-solid-svg-icons";
 import classes from "../App.module.css";
@@ -32,27 +32,32 @@ const DEFAULT_DICE_VALUES = {
 const Twodice = () => {
   const [diceValues, setDiceValues] = useState(DEFAULT_DICE_VALUES);
   const [choises, setChoises] = useState([]);
-  const diceClickHandler = (value) => {
+  const diceClickHandler = useCallback((value) => {
     setChoises((choises) => [...choises, value]);
-    if (choises.length === 1) {
-      let key = `${choises[0]}${value}`;
-      if (!(key in DEFAULT_DICE_VALUES)) {
-        key = `${value}${choises[0]}`;
+  }, []);
+  useEffect(() => {
+    choises.forEach((value, index) => {
+      if (index % 2 === 1) {
+        let key = `${choises[index - 1]}${value}`;
+        if (!(key in DEFAULT_DICE_VALUES)) {
+          key = `${value}${choises[index - 1]}`;
+        }
+        setDiceValues((diceValues) => {
+          return {
+            ...diceValues,
+            [key]: diceValues[key] + 1,
+          };
+        });
+        setTimeout(() => {
+          setChoises([]);
+        }, 150);
       }
-      setDiceValues((diceValues) => {
-        return {
-          ...diceValues,
-          [key]: diceValues[key] + 1,
-        };
-      });
-      setTimeout(() => {
-        setChoises([]);
-      }, 150);
-    }
-  };
+    });
+  }, [choises]);
 
   const resetDice = () => {
     setDiceValues(DEFAULT_DICE_VALUES);
+    setChoises([]);
   };
 
   let results = [];
