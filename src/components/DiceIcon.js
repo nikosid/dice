@@ -30,6 +30,7 @@ const getIcon = (diceNumber) => {
 };
 
 const DiceIcon = (props) => {
+  console.log("DiceIcon");
   const icon = getIcon(props.number.toString());
   const size = props.size || "4x";
 

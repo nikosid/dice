@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSync } from "@fortawesome/free-solid-svg-icons";
 import classes from "../App.module.css";
@@ -17,14 +17,14 @@ const DEFAULT_DICE_VALUES = {
 const Onedice = () => {
   const [diceValues, setDiceValues] = useState(DEFAULT_DICE_VALUES);
 
-  const diceClickHandler = (diceNumber) => {
+  const diceClickHandler = useCallback((diceNumber) => {
     setDiceValues((diceValues) => {
       return {
         ...diceValues,
         [diceNumber]: diceValues[diceNumber] + 1,
       };
     });
-  };
+  }, []);
 
   const resetDice = () => {
     setDiceValues(DEFAULT_DICE_VALUES);
